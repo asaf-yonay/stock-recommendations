@@ -122,6 +122,7 @@ body {
     border-radius: 4px; 
 }
 
+
 .risk-low { background: #198754; }
 .risk-medium { background: #ffc107; }
 .risk-high { background: #dc3545; }
