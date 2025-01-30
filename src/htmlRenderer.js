@@ -1,9 +1,6 @@
 const fs = require('fs').promises;
 const {
     getRecommendationClass,
-    getRiskClass,
-    generateAnalystBar,
-    generateExplanation,
     generateAnalystInfo,
     generateRiskInfo,
     generatePriceInfo,
@@ -47,52 +44,60 @@ function generateHtml(results) {
         <title>Stock Market Predictions</title>
         <link rel="stylesheet" href="styles.css">
         <script>
-            function toggleDetails(rowId) {
-                const details = document.getElementById('details-' + rowId);
-                const allDetails = document.getElementsByClassName('details');
+            function toggleDetails(element) {
+                const detailsDiv = element.querySelector('.details');
+                const allDetails = document.querySelectorAll('.details');
                 
-                Array.from(allDetails).forEach(detail => {
-                    if (detail.id !== 'details-' + rowId) {
+                // Close all other open details
+                allDetails.forEach(detail => {
+                    if (detail !== detailsDiv) {
                         detail.classList.remove('active');
+                        detail.classList.add('hidden');
                     }
                 });
                 
-                details.classList.toggle('active');
+                // Toggle the clicked details
+                detailsDiv.classList.toggle('hidden');
+                detailsDiv.classList.toggle('active');
             }
         </script>
     </head>
     <body>
         <h1>Stock Market Analysis</h1>
         <p>Analysis performed on ${new Date().toLocaleString()}</p>
-        <table class="stock-table">
-            <thead>
-                <tr class="stock-header">
-                    <th>Company</th>
-                    <th>Recommendation</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${stockRows}
-            </tbody>
-        </table>
+        <div class="stock-list">
+            ${stockRows}
+        </div>
     </body>
     </html>`;
 }
 
-function generateStockRow(stock, index) {
+function generateStockRow(stock) {
+    const breakdown = stock.analystRecommendations?.breakdown || {};
+    const analystBreakdown = `${breakdown.strongBuy || 0}/${breakdown.buy || 0}/${breakdown.hold || 0}/${breakdown.sell || 0}`;
+    
+    // Calculate normalized score (0.0 to 9.9)
+    const predictionScore = (stock.prediction * 9.9).toFixed(1);
+
     return `
-        <tr class="stock-row" onclick="toggleDetails(${index})">
-            <td>${stock.companyInfo.name} (${stock.symbol})</td>
-            <td class="${getRecommendationClass(stock.recommendation)}">${stock.recommendation}</td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <div id="details-${index}" class="details">
-                    ${generateMetricsSection(stock)}
-                    ${generateTechnicalSection(stock)}
-                </div>
-            </td>
-        </tr>
+        <div class="stock-row" onclick="toggleDetails(this)">
+            <div class="stock-summary">
+                <span class="stock-name">${stock.companyInfo.name} (${stock.symbol})</span>
+                <span class="score" title="AI Prediction Score">
+                    ${predictionScore}
+                </span>
+                <span class="recommendation ${getRecommendationClass(stock.recommendation)}">
+                    ${stock.recommendation}
+                </span>
+                <span class="analyst-breakdown" title="Strong Buy/Buy/Hold/Sell">
+                    ${analystBreakdown}
+                </span>
+            </div>
+            <div class="details hidden">
+                ${generateMetricsSection(stock)}
+                ${generateTechnicalSection(stock)}
+            </div>
+        </div>
     `;
 }
 

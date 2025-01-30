@@ -153,7 +153,7 @@ class StockPredictionAgent {
         try {
             console.log(`Starting analysis for ${symbol}...`);
             
-            // Fetch all data in parallel
+            // Remove Yahoo Finance from parallel requests
             const [stockData, analystRecs] = await Promise.all([
                 this.fetchStockData(symbol),
                 this.fetchAnalystRecommendations(symbol)
@@ -164,9 +164,6 @@ class StockPredictionAgent {
                 return null;
             }
 
-            console.log(`Data fetched for ${symbol}:`, { stockData, analystRecs });
-
-            // Calculate trends using the quote data
             const trends = {
                 priceChange: stockData.quote.dp || 0,
                 volatility: Math.abs(stockData.quote.dp || 0) / 100,
@@ -177,14 +174,12 @@ class StockPredictionAgent {
                 }
             };
 
-            // Calculate risk metrics
             const riskMetrics = {
                 volatilityRisk: trends.volatility,
                 momentumRisk: Math.abs(trends.momentum),
                 overallRisk: (trends.volatility + Math.abs(trends.momentum)) / 2
             };
 
-            // Generate prediction (1-10 scale)
             const prediction = this.generatePrediction(trends, riskMetrics, analystRecs);
 
             return {

@@ -33,7 +33,7 @@ async function fetchStockData(symbols) {
 // Production list of major stocks across different sectors
 const productionStocks = [
     // Technology
-    'AAPL', 'MSFT', 'GOOGL', 'META', 'NVDA', 'ADBE', 'CRM', 'INTC', 'AMD', 'CSCO',
+    'AAPL', 'MSFT', 'GOOGL', 'META', 'NVDA', 'ADBE', 'CRM', 'INTC', 'AMD', 'CSCO', 'WIX',
     
     // E-commerce & Internet
     'AMZN', 'BABA', 'PYPL', 'SHOP', 'ETSY',
@@ -65,6 +65,6 @@ const productionStocks = [
 
 module.exports = {
     fetchStockData,
-    testStocks: ['AAPL'], // Keep for testing
+    testStocks: ['AAPL', 'WIX'], // Added WIX to test stocks
     fullStockList: productionStocks
 }; 
