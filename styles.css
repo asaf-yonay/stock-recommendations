@@ -11,13 +11,17 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
 }
 
-.stock-row { 
-    cursor: pointer; 
-    transition: background-color 0.2s; 
+.stock-row {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.stock-row:hover { 
-    background-color: #f8f9fa; 
+.stock-row:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .stock-row td { 
@@ -34,15 +38,18 @@ body {
     text-align: left; 
 }
 
-.details { 
-    display: none; 
-    padding: 20px; 
-    background-color: #fff; 
-    margin: 0; 
+.hidden {
+    display: none !important;
 }
 
-.details.active { 
-    display: block; 
+.details {
+    border-top: 1px solid #eee;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.details.active {
+    display: block;
 }
 
 .metrics { 
@@ -93,7 +100,7 @@ body {
 }
 
 /* Color classes */
-.positive { color: #198754; }
+.positive { color: #28a745; }
 .negative { color: #dc3545; }
 .neutral { color: #ffc107; }
 .strong-buy { color: #1a8754; font-weight: bold; }
@@ -120,21 +127,245 @@ body {
 .risk-high { background: #dc3545; }
 
 /* Analyst recommendations */
+.analyst-bar-container {
+    margin-top: 10px;
+    width: 100%;
+}
+
 .analyst-bar {
     height: 20px;
     background: #eee;
     border-radius: 4px;
-    margin-top: 5px;
     display: flex;
+    overflow: hidden;
+    width: 100%;
 }
 
-.analyst-segment {
+.analyst-bar div {
     height: 100%;
     transition: width 0.3s ease;
 }
 
-.analyst-strong-buy { background: #1a8754; }
-.analyst-buy { background: #198754; }
-.analyst-hold { background: #ffc107; }
-.analyst-sell { background: #dc3545; }
-.analyst-strong-sell { background: #dc3545; } 
+.analyst-bar .strong-buy { 
+    background: #1a8754; 
+}
+
+.analyst-bar .buy { 
+    background: #198754; 
+}
+
+.analyst-bar .hold { 
+    background: #ffc107; 
+}
+
+.analyst-bar .sell { 
+    background: #dc3545; 
+}
+
+.analyst-bar .strong-sell { 
+    background: #dc3545; 
+}
+
+/* Add to the end of your existing CSS */
+[title] {
+    cursor: help;
+}
+
+.price-target-visualization {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 25px;
+    margin: 15px 0;
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.price-segment {
+    flex: 1;
+    background: #e9ecef;
+    margin: 0 1px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    transition: height 0.3s ease;
+}
+
+.price-target-legend {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.price-target-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.analyst-coverage {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.price-target-bar {
+    position: relative;
+    height: 30px;
+    background: #f8f9fa;
+    margin: 15px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.target-range {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(to right, #4CAF50, #FFC107);
+    opacity: 0.3;
+}
+
+.current-price-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #333;
+    z-index: 2;
+}
+
+.analyst-reports {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.analyst-reports h4 {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.analyst-report {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.report-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.firm {
+    font-weight: bold;
+}
+
+.target-price {
+    font-weight: bold;
+}
+
+.rating {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.rating.bullish {
+    background: #d4edda;
+    color: #155724;
+}
+
+.rating.bearish {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.rating.neutral {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.analyst-coverage {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.analyst-breakdown {
+    color: #666;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.stock-summary {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stock-name {
+    flex: 1;
+    font-weight: bold;
+}
+
+.recommendation {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.recommendation.buy {
+    background: #d4edda;
+    color: #155724;
+}
+
+.recommendation.sell {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.recommendation.hold {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.analyst-breakdown {
+    color: #666;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.stock-list {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.score {
+    background: #2c3e50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+} 
