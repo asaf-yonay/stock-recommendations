@@ -1,33 +1,20 @@
 const { renderToFile } = require('./src/htmlRenderer');
-const agent = require('./src/stockPredictionAgent');
-const { STOCKS } = require('./src/config');
+const { loadFromCache } = require('./src/services/cache');
 
 async function main() {
     try {
         console.log('Starting stock market analysis...');
         console.time('Analysis Duration');
         
-        // Determine which stocks to analyze based on the environment
-        const isTestRun = process.env.NODE_ENV === 'test' || process.env.npm_lifecycle_event === 'test';
-        const stocksToAnalyze = isTestRun ? ['WIX', 'AAPL'] : STOCKS;
+        // Load data from cache
+        const results = await loadFromCache();
         
-        console.log(`Analyzing ${stocksToAnalyze.length} stocks in ${isTestRun ? 'test' : 'full'} mode...`);
-        
-        const results = [];
-        for (const symbol of stocksToAnalyze) {
-            try {
-                const analysis = await agent.analyzeTicker(symbol);
-                if (analysis) {
-                    results.push(analysis);
-                }
-            } catch (error) {
-                console.error(`Error analyzing ${symbol}:`, error.message);
-            }
+        if (!results) {
+            console.error('No cached data found. Please run "npm run refresh" first.');
+            process.exit(1);
         }
 
-        // Sort results by prediction score (descending)
-        results.sort((a, b) => b.prediction - a.prediction);
-        
+        // Generate HTML from cached data
         await renderToFile(results, 'index.html');
         
         console.timeEnd('Analysis Duration');
@@ -42,4 +29,4 @@ if (require.main === module) {
     main();
 }
 
-module.exports = main; 
+module.exports = main;

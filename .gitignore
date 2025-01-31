@@ -2906,3 +2906,6 @@ node_modules/which/package.json
 node_modules/which/README.md
 node_modules/which/which.js
 node_modules/which/bin/node-which
+
+cache/
+*.log
