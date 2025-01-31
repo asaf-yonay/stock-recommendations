@@ -9,21 +9,24 @@ const {
 
 async function renderToFile(stockData, outputPath = 'index.html') {
     // Sort stocks by prediction score before generating HTML
-    const sortedStocks = [...stockData].sort((a, b) => {
-        // First sort by prediction score
-        const scoreDiff = b.prediction - a.prediction;
-        if (scoreDiff !== 0) return scoreDiff;
-        
-        // If scores are equal, sort by analyst consensus
-        const consensusDiff = (b.analystRecommendations?.consensusScore || 0) - 
-                            (a.analystRecommendations?.consensusScore || 0);
-        if (consensusDiff !== 0) return consensusDiff;
-        
-        // If still equal, sort alphabetically by symbol
-        return a.symbol.localeCompare(b.symbol);
-    });
+    const sortedData = {
+        ...stockData,
+        data: [...stockData.data].sort((a, b) => {
+            // First sort by prediction score
+            const scoreDiff = b.prediction - a.prediction;
+            if (scoreDiff !== 0) return scoreDiff;
+            
+            // If scores are equal, sort by analyst consensus
+            const consensusDiff = (b.analystRecommendations?.consensusScore || 0) - 
+                                (a.analystRecommendations?.consensusScore || 0);
+            if (consensusDiff !== 0) return consensusDiff;
+            
+            // If still equal, sort alphabetically by symbol
+            return a.symbol.localeCompare(b.symbol);
+        })
+    };
 
-    const htmlContent = generateHtml(sortedStocks);
+    const htmlContent = generateHtml(sortedData);
     
     try {
         await fs.writeFile(outputPath, htmlContent);
@@ -35,7 +38,17 @@ async function renderToFile(stockData, outputPath = 'index.html') {
 }
 
 function generateHtml(results) {
-    const stockRows = results.map((stock, index) => generateStockRow(stock, index)).join('');
+    const { data, fetchTimestamp } = results;
+    const renderTimestamp = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+    
+    const stockRows = data.map((stock, index) => generateStockRow(stock, index)).join('');
     
     return `
     <!DOCTYPE html>
@@ -43,31 +56,22 @@ function generateHtml(results) {
     <head>
         <title>Stock Market Predictions</title>
         <link rel="stylesheet" href="styles.css">
-        <script>
-            function toggleDetails(element) {
-                const detailsDiv = element.querySelector('.details');
-                const allDetails = document.querySelectorAll('.details');
-                
-                // Close all other open details
-                allDetails.forEach(detail => {
-                    if (detail !== detailsDiv) {
-                        detail.classList.remove('active');
-                        detail.classList.add('hidden');
-                    }
-                });
-                
-                // Toggle the clicked details
-                detailsDiv.classList.toggle('hidden');
-                detailsDiv.classList.toggle('active');
-            }
-        </script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
-        <h1>Stock Market Analysis</h1>
-        <p>Analysis performed on ${new Date().toLocaleString()}</p>
+        <header class="main-header">
+            <div class="header-content">
+                <h1>Stock Market Analysis</h1>
+                <div class="timestamps">
+                    <p>Data fetched on: ${fetchTimestamp}</p>
+                    <p>Report generated on: ${renderTimestamp}</p>
+                </div>
+            </div>
+        </header>
         <div class="stock-list">
             ${stockRows}
         </div>
+        <script src="src/scripts/fed-scripts.js"></script>
     </body>
     </html>`;
 }
@@ -80,7 +84,7 @@ function generateStockRow(stock) {
     const predictionScore = (stock.prediction * 9.9).toFixed(1);
 
     return `
-        <div class="stock-row" onclick="toggleDetails(this)">
+        <div class="stock-row">
             <div class="stock-summary">
                 <span class="stock-name">${stock.companyInfo.name} (${stock.symbol})</span>
                 <span class="score" title="AI Prediction Score">

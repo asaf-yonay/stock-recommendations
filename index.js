@@ -7,15 +7,15 @@ async function main() {
         console.time('Analysis Duration');
         
         // Load data from cache
-        const results = await loadFromCache();
+        const cacheData = await loadFromCache();
         
-        if (!results) {
+        if (!cacheData) {
             console.error('No cached data found. Please run "npm run refresh" first.');
             process.exit(1);
         }
 
         // Generate HTML from cached data
-        await renderToFile(results, 'index.html');
+        await renderToFile(cacheData, 'index.html');
         
         console.timeEnd('Analysis Duration');
         console.log('Analysis complete! Check index.html for results.');

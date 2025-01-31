@@ -23,8 +23,17 @@ async function refreshData() {
         // Sort results by prediction score before saving
         results.sort((a, b) => b.prediction - a.prediction);
         
-        // Save to cache
-        await saveToCache(results);
+        // Save to cache with timestamp
+        const timestamp = new Date().toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+        
+        await saveToCache(results, timestamp);
         
         console.timeEnd('Refresh Duration');
         console.log('Data refresh complete! Cache file updated.');

@@ -19,7 +19,7 @@ function generatePriceInfo(stock) {
     // Early return if required data is missing
     if (!stock?.companyInfo?.currentPrice) {
         return `
-            <div class="metric">
+            <div class="metric price-metric">
                 <h3>Price Information</h3>
                 <div class="kpi-grid">
                     <div class="kpi">Price data unavailable</div>
@@ -31,7 +31,7 @@ function generatePriceInfo(stock) {
     const { currentPrice, dayChange, marketCap, dayRange } = stock.companyInfo;
 
     return `
-        <div class="metric">
+        <div class="metric price-metric">
             <h3>Price Information</h3>
             <div class="kpi-grid">
                 <div class="kpi" title="Current trading price of the stock">Current Price:</div>
@@ -131,23 +131,32 @@ function generateAnalystBar(breakdown) {
 
 function generateAnalystInfo(stock) {
     const consensusScore = stock.analystRecommendations?.consensusScore;
+    const breakdown = stock.analystRecommendations?.breakdown || {};
+    
     return `
-        <div class="metric">
+        <div class="metric analyst-metric">
             <h3>Analyst Recommendations</h3>
             <div class="kpi-grid">
                 <div class="kpi" title="Average analyst rating on a scale of 1-10">Consensus:</div>
                 <div class="kpi-value">${consensusScore ? consensusScore.toFixed(1) : 'N/A'}/10</div>
-                <div class="kpi" title="Number of analysts covering this stock">Coverage:</div>
-                <div class="kpi-value">${stock.analystRecommendations?.total || 0} analysts</div>
+                
+                <div class="kpi" title="Number of analysts giving Strong Buy rating">Strong Buy:</div>
+                <div class="kpi-value">${breakdown.strongBuy || 0}</div>
+                
+                <div class="kpi" title="Number of analysts giving Buy rating">Buy:</div>
+                <div class="kpi-value">${breakdown.buy || 0}</div>
+                
+                <div class="kpi" title="Number of analysts giving Hold rating">Hold:</div>
+                <div class="kpi-value">${breakdown.hold || 0}</div>
+                
+                <div class="kpi" title="Number of analysts giving Sell rating">Sell:</div>
+                <div class="kpi-value">${breakdown.sell || 0}</div>
+                
+                <div class="kpi" title="Number of analysts giving Strong Sell rating">Strong Sell:</div>
+                <div class="kpi-value">${breakdown.strongSell || 0}</div>
             </div>
             <div class="analyst-bar-container" title="Distribution of analyst recommendations">
                 ${generateAnalystBar(stock.analystRecommendations?.breakdown)}
-            </div>
-            <div class="kpi-grid" style="font-size: 0.8em; margin-top: 5px;">
-                <div title="Number of Strong Buy recommendations">Strong Buy: ${stock.analystRecommendations?.breakdown?.strongBuy || 0}</div>
-                <div title="Number of Buy recommendations">Buy: ${stock.analystRecommendations?.breakdown?.buy || 0}</div>
-                <div title="Number of Hold recommendations">Hold: ${stock.analystRecommendations?.breakdown?.hold || 0}</div>
-                <div title="Number of Sell recommendations">Sell: ${stock.analystRecommendations?.breakdown?.sell || 0}</div>
             </div>
         </div>
     `;
@@ -155,38 +164,17 @@ function generateAnalystInfo(stock) {
 
 function generateRiskInfo(stock) {
     return `
-        <div class="metric">
+        <div class="metric risk-metric">
             <h3>Risk Assessment</h3>
             <div class="kpi-grid">
-                <div class="kpi" title="Risk based on price volatility">Volatility Risk:</div>
-                <div class="kpi-value">
-                    ${(stock.riskMetrics.volatilityRisk * 10).toFixed(1)}%
-                    <div class="risk-meter" title="Visual representation of volatility risk">
-                        <div class="risk-level ${getRiskClass(stock.riskMetrics.volatilityRisk)}" 
-                             style="width: ${stock.riskMetrics.volatilityRisk * 100}%">
-                        </div>
-                    </div>
-                </div>
+                <div class="kpi" title="Overall risk level">Risk Level:</div>
+                <div class="kpi-value">${stock.riskMetrics?.riskLevel || 'N/A'}</div>
                 
-                <div class="kpi" title="Risk based on price momentum">Momentum Risk:</div>
-                <div class="kpi-value">
-                    ${(stock.riskMetrics.momentumRisk * 10).toFixed(1)}%
-                    <div class="risk-meter" title="Visual representation of momentum risk">
-                        <div class="risk-level ${getRiskClass(stock.riskMetrics.momentumRisk)}"
-                             style="width: ${stock.riskMetrics.momentumRisk * 100}%">
-                        </div>
-                    </div>
-                </div>
+                <div class="kpi" title="Volatility measure">Volatility:</div>
+                <div class="kpi-value">${stock.riskMetrics?.volatility || 'N/A'}</div>
                 
-                <div class="kpi" title="Combined risk assessment">Overall Risk:</div>
-                <div class="kpi-value">
-                    ${(stock.riskMetrics.overallRisk * 10).toFixed(1)}%
-                    <div class="risk-meter" title="Visual representation of overall risk">
-                        <div class="risk-level ${getRiskClass(stock.riskMetrics.overallRisk)}"
-                             style="width: ${stock.riskMetrics.overallRisk * 100}%">
-                        </div>
-                    </div>
-                </div>
+                <div class="kpi" title="Beta relative to market">Beta:</div>
+                <div class="kpi-value">${stock.riskMetrics?.beta?.toFixed(2) || 'N/A'}</div>
             </div>
         </div>
     `;

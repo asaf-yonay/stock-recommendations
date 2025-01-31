@@ -13,10 +13,10 @@ async function ensureCacheDirectory() {
     }
 }
 
-async function saveToCache(data) {
+async function saveToCache(data, timestamp) {
     await ensureCacheDirectory();
     const cacheData = {
-        timestamp: Date.now(),
+        fetchTimestamp: timestamp,
         data
     };
     await fs.writeFile(CACHE_FILE, JSON.stringify(cacheData, null, 2));
@@ -25,17 +25,10 @@ async function saveToCache(data) {
 async function loadFromCache() {
     try {
         const cacheContent = await fs.readFile(CACHE_FILE, 'utf-8');
-        const cache = JSON.parse(cacheContent);
-        
-        // Check if cache is still valid
-        if (Date.now() - cache.timestamp < CACHE_DURATION) {
-            return cache.data;
-        }
+        return JSON.parse(cacheContent);
     } catch (error) {
-        // If file doesn't exist or is invalid, return null
         return null;
     }
-    return null;
 }
 
 module.exports = {
