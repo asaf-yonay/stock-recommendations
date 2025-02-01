@@ -3,6 +3,7 @@ const path = require('path');
 
 const CACHE_DIR = path.join(__dirname, '../../cache');
 const CACHE_FILE = path.join(CACHE_DIR, 'stock_data.json');
+const MOCK_CACHE_FILE = path.join(CACHE_DIR, 'stock_data_mock.json');
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 async function ensureCacheDirectory() {
@@ -13,18 +14,20 @@ async function ensureCacheDirectory() {
     }
 }
 
-async function saveToCache(data, timestamp) {
+async function saveToCache(data, timestamp, isMock = false) {
     await ensureCacheDirectory();
     const cacheData = {
         fetchTimestamp: timestamp,
         data
     };
-    await fs.writeFile(CACHE_FILE, JSON.stringify(cacheData, null, 2));
+    const filePath = isMock ? MOCK_CACHE_FILE : CACHE_FILE;
+    await fs.writeFile(filePath, JSON.stringify(cacheData, null, 2));
 }
 
-async function loadFromCache() {
+async function loadFromCache(useMock = false) {
     try {
-        const cacheContent = await fs.readFile(CACHE_FILE, 'utf-8');
+        const filePath = useMock ? MOCK_CACHE_FILE : CACHE_FILE;
+        const cacheContent = await fs.readFile(filePath, 'utf-8');
         return JSON.parse(cacheContent);
     } catch (error) {
         return null;
@@ -33,5 +36,6 @@ async function loadFromCache() {
 
 module.exports = {
     saveToCache,
-    loadFromCache
+    loadFromCache,
+    MOCK_CACHE_FILE
 }; 

@@ -1,24 +1,19 @@
 const { renderToFile } = require('./src/htmlRenderer');
-const { loadFromCache } = require('./src/services/cache');
 
 async function main() {
     try {
         console.log('Starting stock market analysis...');
         console.time('Analysis Duration');
         
-        // Load data from cache
-        const cacheData = await loadFromCache();
+        // Check if we should use mock data
+        const useMock = process.argv.includes('--mock');
+        const outputFile = useMock ? 'mock.html' : 'index.html';
         
-        if (!cacheData) {
-            console.error('No cached data found. Please run "npm run refresh" first.');
-            process.exit(1);
-        }
-
         // Generate HTML from cached data
-        await renderToFile(cacheData, 'index.html');
+        await renderToFile(outputFile, useMock);
         
         console.timeEnd('Analysis Duration');
-        console.log('Analysis complete! Check index.html for results.');
+        console.log(`Analysis complete! Check ${outputFile} for results.`);
     } catch (error) {
         console.error('Main process error:', error);
         process.exit(1);

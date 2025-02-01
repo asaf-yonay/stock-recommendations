@@ -4,8 +4,8 @@
   "description": "Stock market analysis tool",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "refresh": "node src/scripts/refreshData.js"
+    "start": "node src/scripts/refreshData.js && node index.js",
+    "test": "node src/scripts/refreshData.js --mock && node index.js --mock"
   },
   "keywords": [],
   "author": "",
