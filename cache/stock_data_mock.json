@@ -1,7 +1,7 @@
 {
-  "fetchTimestamp": "2025-02-01T21:49:07.893Z",
+  "fetchTimestamp": "2025-02-01T21:52:46.895Z",
   "data": {
-    "lastGenerationDate": "2/1/2025, 23:44",
+    "lastGenerationDate": "2/1/2025, 23:52",
     "AAPL": {
       "010125pre": {
         "symbol": "AAPL",
@@ -39,12 +39,12 @@
         },
         "companyInfo": {
           "name": "Apple Inc",
-          "currentPrice": 234.69,
-          "dayChange": -0.5552,
-          "marketCap": "$3529.2T",
+          "currentPrice": 232.58,
+          "dayChange": -1.4503,
+          "marketCap": "$3497.4T",
           "dayRange": {
-            "low": 233.52,
-            "high": 235.86
+            "low": 231.42,
+            "high": 233.74
           }
         }
       },
@@ -131,12 +131,12 @@
         },
         "companyInfo": {
           "name": "Adobe Inc",
-          "currentPrice": 432.39,
-          "dayChange": -1.1567,
-          "marketCap": "$188.2T",
+          "currentPrice": 430.83,
+          "dayChange": -1.5124,
+          "marketCap": "$187.5T",
           "dayRange": {
-            "low": 430.23,
-            "high": 434.55
+            "low": 428.68,
+            "high": 432.98
           }
         }
       },
@@ -223,12 +223,12 @@
         },
         "companyInfo": {
           "name": "Amazon.com Inc",
-          "currentPrice": 234.25,
-          "dayChange": -1.4439,
-          "marketCap": "$2463.1T",
+          "currentPrice": 232.81,
+          "dayChange": -2.0471,
+          "marketCap": "$2448.0T",
           "dayRange": {
-            "low": 233.08,
-            "high": 235.42
+            "low": 231.65,
+            "high": 233.97
           }
         }
       },
@@ -315,12 +315,12 @@
         },
         "companyInfo": {
           "name": "Appian Corp",
-          "currentPrice": 34.6,
-          "dayChange": -1.3877,
+          "currentPrice": 34.54,
+          "dayChange": -1.5619,
           "marketCap": "$2.6T",
           "dayRange": {
-            "low": 34.43,
-            "high": 34.77
+            "low": 34.37,
+            "high": 34.71
           }
         }
       },
@@ -407,12 +407,12 @@
         },
         "companyInfo": {
           "name": "Confluent Inc",
-          "currentPrice": 29.52,
-          "dayChange": -0.5282,
+          "currentPrice": 29.42,
+          "dayChange": -0.8809,
           "marketCap": "$9.6T",
           "dayRange": {
-            "low": 29.37,
-            "high": 29.67
+            "low": 29.27,
+            "high": 29.57
           }
         }
       },
@@ -499,12 +499,12 @@
         },
         "companyInfo": {
           "name": "Salesforce Inc",
-          "currentPrice": 333.94,
-          "dayChange": -2.2698,
-          "marketCap": "$319.6T",
+          "currentPrice": 337.5,
+          "dayChange": -1.2277,
+          "marketCap": "$323.0T",
           "dayRange": {
-            "low": 332.27,
-            "high": 335.61
+            "low": 335.81,
+            "high": 339.19
           }
         }
       },
@@ -591,12 +591,12 @@
         },
         "companyInfo": {
           "name": "Datadog Inc",
-          "currentPrice": 141.26,
-          "dayChange": -1.0145,
+          "currentPrice": 141.13,
+          "dayChange": -1.1056,
           "marketCap": "$48.0T",
           "dayRange": {
-            "low": 140.55,
-            "high": 141.97
+            "low": 140.42,
+            "high": 141.84
           }
         }
       },
@@ -683,12 +683,12 @@
         },
         "companyInfo": {
           "name": "DigitalOcean Holdings Inc",
-          "currentPrice": 40.91,
-          "dayChange": -1.372,
-          "marketCap": "$3.7T",
+          "currentPrice": 40.98,
+          "dayChange": -1.2003,
+          "marketCap": "$3.8T",
           "dayRange": {
-            "low": 40.71,
-            "high": 41.11
+            "low": 40.78,
+            "high": 41.18
           }
         }
       },
@@ -775,12 +775,12 @@
         },
         "companyInfo": {
           "name": "Domo Inc",
-          "currentPrice": 8.4,
-          "dayChange": -0.8639,
-          "marketCap": "$328.3B",
+          "currentPrice": 8.35,
+          "dayChange": -1.4323,
+          "marketCap": "$326.5B",
           "dayRange": {
-            "low": 8.36,
-            "high": 8.44
+            "low": 8.31,
+            "high": 8.39
           }
         }
       },
@@ -867,12 +867,12 @@
         },
         "companyInfo": {
           "name": "Elastic NV",
-          "currentPrice": 111.99,
-          "dayChange": -0.5208,
-          "marketCap": "$11.6T",
+          "currentPrice": 110.67,
+          "dayChange": -1.6981,
+          "marketCap": "$11.5T",
           "dayRange": {
-            "low": 111.43,
-            "high": 112.55
+            "low": 110.12,
+            "high": 111.22
           }
         }
       },
@@ -959,12 +959,12 @@
         },
         "companyInfo": {
           "name": "Jfrog Ltd",
-          "currentPrice": 33.95,
-          "dayChange": -2.3304,
+          "currentPrice": 34.22,
+          "dayChange": -1.5506,
           "marketCap": "$3.8T",
           "dayRange": {
-            "low": 33.78,
-            "high": 34.12
+            "low": 34.05,
+            "high": 34.39
           }
         }
       },
@@ -1051,12 +1051,12 @@
         },
         "companyInfo": {
           "name": "Alphabet Inc",
-          "currentPrice": 202.73,
-          "dayChange": -0.6343,
-          "marketCap": "$2491.4T",
+          "currentPrice": 200.33,
+          "dayChange": -1.8108,
+          "marketCap": "$2461.9T",
           "dayRange": {
-            "low": 201.72,
-            "high": 203.74
+            "low": 199.33,
+            "high": 201.33
           }
         }
       },
@@ -1144,7 +1144,7 @@
         "companyInfo": {
           "name": "GitLab Inc",
           "currentPrice": 72.33,
-          "dayChange": -0.5907,
+          "dayChange": -0.5956,
           "marketCap": "$11.7T",
           "dayRange": {
             "low": 71.97,
@@ -1235,12 +1235,12 @@
         },
         "companyInfo": {
           "name": "HubSpot Inc",
-          "currentPrice": 770.83,
-          "dayChange": -1.1158,
-          "marketCap": "$39.8T",
+          "currentPrice": 765.88,
+          "dayChange": -1.7515,
+          "marketCap": "$39.5T",
           "dayRange": {
-            "low": 766.98,
-            "high": 774.68
+            "low": 762.05,
+            "high": 769.71
           }
         }
       },
@@ -1327,12 +1327,12 @@
         },
         "companyInfo": {
           "name": "Intuit Inc",
-          "currentPrice": 595.83,
-          "dayChange": -0.9442,
-          "marketCap": "$166.8T",
+          "currentPrice": 594.05,
+          "dayChange": -1.2395,
+          "marketCap": "$166.3T",
           "dayRange": {
-            "low": 592.85,
-            "high": 598.81
+            "low": 591.08,
+            "high": 597.02
           }
         }
       },
@@ -1419,12 +1419,12 @@
         },
         "companyInfo": {
           "name": "MongoDB Inc",
-          "currentPrice": 266.59,
-          "dayChange": -2.4612,
-          "marketCap": "$19.9T",
+          "currentPrice": 271.46,
+          "dayChange": -0.6819,
+          "marketCap": "$20.3T",
           "dayRange": {
-            "low": 265.26,
-            "high": 267.92
+            "low": 270.1,
+            "high": 272.82
           }
         }
       },
@@ -1511,12 +1511,12 @@
         },
         "companyInfo": {
           "name": "Meta Platforms Inc",
-          "currentPrice": 682.66,
-          "dayChange": -0.9462,
-          "marketCap": "$1723.0T",
+          "currentPrice": 674.05,
+          "dayChange": -2.1952,
+          "marketCap": "$1701.3T",
           "dayRange": {
-            "low": 679.25,
-            "high": 686.07
+            "low": 670.68,
+            "high": 677.42
           }
         }
       },
@@ -1603,12 +1603,12 @@
         },
         "companyInfo": {
           "name": "Microsoft Corp",
-          "currentPrice": 407.14,
-          "dayChange": -1.9071,
-          "marketCap": "$3026.7T",
+          "currentPrice": 409.09,
+          "dayChange": -1.4379,
+          "marketCap": "$3041.1T",
           "dayRange": {
-            "low": 405.1,
-            "high": 409.18
+            "low": 407.04,
+            "high": 411.14
           }
         }
       },
@@ -1695,12 +1695,12 @@
         },
         "companyInfo": {
           "name": "Cloudflare Inc",
-          "currentPrice": 135.72,
-          "dayChange": -1.9374,
-          "marketCap": "$46.6T",
+          "currentPrice": 136.83,
+          "dayChange": -1.1377,
+          "marketCap": "$47.0T",
           "dayRange": {
-            "low": 135.04,
-            "high": 136.4
+            "low": 136.15,
+            "high": 137.51
           }
         }
       },
@@ -1787,12 +1787,12 @@
         },
         "companyInfo": {
           "name": "ServiceNow Inc",
-          "currentPrice": 1001.29,
-          "dayChange": -1.6781,
-          "marketCap": "$206.3T",
+          "currentPrice": 995.85,
+          "dayChange": -2.2128,
+          "marketCap": "$205.2T",
           "dayRange": {
-            "low": 996.28,
-            "high": 1006.3
+            "low": 990.87,
+            "high": 1000.83
           }
         }
       },
@@ -1879,12 +1879,12 @@
         },
         "companyInfo": {
           "name": "NVIDIA Corp",
-          "currentPrice": 117.73,
-          "dayChange": -1.9482,
-          "marketCap": "$2883.2T",
+          "currentPrice": 118.79,
+          "dayChange": -1.0659,
+          "marketCap": "$2909.2T",
           "dayRange": {
-            "low": 117.14,
-            "high": 118.32
+            "low": 118.2,
+            "high": 119.38
           }
         }
       },
@@ -1971,12 +1971,12 @@
         },
         "companyInfo": {
           "name": "Okta Inc",
-          "currentPrice": 92.31,
-          "dayChange": -2.0242,
+          "currentPrice": 92.75,
+          "dayChange": -1.5627,
           "marketCap": "$15.8T",
           "dayRange": {
-            "low": 91.85,
-            "high": 92.77
+            "low": 92.29,
+            "high": 93.21
           }
         }
       },
@@ -2063,12 +2063,12 @@
         },
         "companyInfo": {
           "name": "Oracle Corp",
-          "currentPrice": 166.76,
-          "dayChange": -1.9389,
-          "marketCap": "$466.5T",
+          "currentPrice": 165.95,
+          "dayChange": -2.4179,
+          "marketCap": "$464.2T",
           "dayRange": {
-            "low": 165.93,
-            "high": 167.59
+            "low": 165.12,
+            "high": 166.78
           }
         }
       },
@@ -2155,12 +2155,12 @@
         },
         "companyInfo": {
           "name": "Palantir Technologies Inc",
-          "currentPrice": 80.44,
-          "dayChange": -2.4801,
-          "marketCap": "$183.2T",
+          "currentPrice": 80.66,
+          "dayChange": -2.2128,
+          "marketCap": "$183.7T",
           "dayRange": {
-            "low": 80.04,
-            "high": 80.84
+            "low": 80.26,
+            "high": 81.06
           }
         }
       },
@@ -2247,12 +2247,12 @@
         },
         "companyInfo": {
           "name": "Snowflake Inc",
-          "currentPrice": 177.04,
-          "dayChange": -2.4626,
-          "marketCap": "$58.4T",
+          "currentPrice": 179.41,
+          "dayChange": -1.1576,
+          "marketCap": "$59.2T",
           "dayRange": {
-            "low": 176.15,
-            "high": 177.93
+            "low": 178.51,
+            "high": 180.31
           }
         }
       },
@@ -2340,7 +2340,7 @@
         "companyInfo": {
           "name": "SUMO",
           "currentPrice": 0,
-          "dayChange": -1.4788,
+          "dayChange": -0.953,
           "marketCap": "$NaNA",
           "dayRange": {
             "low": 0,
@@ -2431,12 +2431,12 @@
         },
         "companyInfo": {
           "name": "Atlassian Corp",
-          "currentPrice": 303.88,
-          "dayChange": -0.9464,
+          "currentPrice": 303.7,
+          "dayChange": -1.0034,
           "marketCap": "$79.4T",
           "dayRange": {
-            "low": 302.36,
-            "high": 305.4
+            "low": 302.18,
+            "high": 305.22
           }
         }
       },
@@ -2523,12 +2523,12 @@
         },
         "companyInfo": {
           "name": "Workday Inc",
-          "currentPrice": 259.31,
-          "dayChange": -1.0491,
-          "marketCap": "$69.0T",
+          "currentPrice": 257.46,
+          "dayChange": -1.7566,
+          "marketCap": "$68.5T",
           "dayRange": {
-            "low": 258.01,
-            "high": 260.61
+            "low": 256.17,
+            "high": 258.75
           }
         }
       },
@@ -2615,12 +2615,12 @@
         },
         "companyInfo": {
           "name": "Wix.Com Ltd",
-          "currentPrice": 236.24,
-          "dayChange": -1.1079,
+          "currentPrice": 237.61,
+          "dayChange": -0.5351,
           "marketCap": "$13.2T",
           "dayRange": {
-            "low": 235.06,
-            "high": 237.42
+            "low": 236.42,
+            "high": 238.8
           }
         }
       },
@@ -2707,12 +2707,12 @@
         },
         "companyInfo": {
           "name": "Zscaler Inc",
-          "currentPrice": 201.35,
-          "dayChange": -0.6117,
+          "currentPrice": 201.22,
+          "dayChange": -0.6762,
           "marketCap": "$30.9T",
           "dayRange": {
-            "low": 200.34,
-            "high": 202.36
+            "low": 200.21,
+            "high": 202.23
           }
         }
       },

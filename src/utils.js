@@ -9,12 +9,6 @@ function getRecommendationClass(recommendation) {
     return classMap[recommendation] || '';
 }
 
-function getRiskClass(risk) {
-    if (risk < 0.3) return 'risk-low';
-    if (risk < 0.7) return 'risk-medium';
-    return 'risk-high';
-}
-
 function generatePriceInfo(stock) {
     // Early return if required data is missing
     if (!stock?.companyInfo?.currentPrice) {
@@ -162,24 +156,6 @@ function generateAnalystInfo(stock) {
     `;
 }
 
-function generateRiskInfo(stock) {
-    return `
-        <div class="metric risk-metric">
-            <h3>Risk Assessment</h3>
-            <div class="kpi-grid">
-                <div class="kpi" title="Overall risk level">Risk Level:</div>
-                <div class="kpi-value">${stock.riskMetrics?.riskLevel || 'N/A'}</div>
-                
-                <div class="kpi" title="Volatility measure">Volatility:</div>
-                <div class="kpi-value">${stock.riskMetrics?.volatility || 'N/A'}</div>
-                
-                <div class="kpi" title="Beta relative to market">Beta:</div>
-                <div class="kpi-value">${stock.riskMetrics?.beta?.toFixed(2) || 'N/A'}</div>
-            </div>
-        </div>
-    `;
-}
-
 function generateTechnicalSection(stock) {
     return `
         <div class="technical-metrics">
@@ -244,20 +220,21 @@ function generateMetricsSection(stock) {
             ${generatePriceInfo(stock)}
             ${generatePriceTargets(stock)}
             ${generateAnalystInfo(stock)}
-            ${generateRiskInfo(stock)}
         </div>
     `;
 }
 
 module.exports = {
     getRecommendationClass,
-    getRiskClass,
+    generatePriceInfo,
+    generateAnalystInfo,
+    generateTechnicalSection,
     generateAnalystBar,
     generateExplanation,
-    generateAnalystInfo,
-    generateRiskInfo,
-    generatePriceInfo,
-    generateTechnicalSection,
+    generatePriceTargets,
     generateMetricsSection,
-    generatePriceTargets
+    formatAnalystBreakdown(recommendations) {
+        const { strongBuy, buy, hold, sell } = recommendations.breakdown;
+        return `${strongBuy}/${buy}/${hold}/${sell}`;
+    }
 }; 

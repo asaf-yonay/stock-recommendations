@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
 const finnhub = require('finnhub');
+const { getRecommendationClass } = require('./utils');
 
 // Define your API key here
 const API_KEY = 'cudu12hr01qiosq15e7gcudu12hr01qiosq15e80'; // Replace with your actual API key
