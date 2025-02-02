@@ -1,9 +1,9 @@
 {
-  "fetchTimestamp": "2025-02-01T21:52:43.298Z",
+  "fetchTimestamp": "2025-02-02T22:29:00.664Z",
   "data": {
-    "lastGenerationDate": "2/1/2025, 23:52",
+    "lastGenerationDate": "2/3/2025, 24:28",
     "AAPL": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "AAPL",
         "prediction": 6.168434181818181,
         "recommendation": "Buy",
@@ -50,7 +50,7 @@
       }
     },
     "ADBE": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "ADBE",
         "prediction": 6.238833913043479,
         "recommendation": "Buy",
@@ -97,7 +97,7 @@
       }
     },
     "AMZN": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "AMZN",
         "prediction": 6.519366256410256,
         "recommendation": "Buy",
@@ -144,7 +144,7 @@
       }
     },
     "APPN": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "APPN",
         "prediction": 4.578783333333334,
         "recommendation": "Hold",
@@ -191,7 +191,7 @@
       }
     },
     "CFLT": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "CFLT",
         "prediction": 6.159948153846154,
         "recommendation": "Buy",
@@ -238,7 +238,7 @@
       }
     },
     "CRM": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "CRM",
         "prediction": 6.194471142857143,
         "recommendation": "Buy",
@@ -285,7 +285,7 @@
       }
     },
     "DDOG": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "DDOG",
         "prediction": 6.475701,
         "recommendation": "Buy",
@@ -332,7 +332,7 @@
       }
     },
     "DOCN": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "DOCN",
         "prediction": 5.910500631578947,
         "recommendation": "Hold",
@@ -379,7 +379,7 @@
       }
     },
     "DOMO": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "DOMO",
         "prediction": 5.934514909090909,
         "recommendation": "Hold",
@@ -426,7 +426,7 @@
       }
     },
     "ESTC": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "ESTC",
         "prediction": 6.381538363636364,
         "recommendation": "Buy",
@@ -473,7 +473,7 @@
       }
     },
     "FROG": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "FROG",
         "prediction": 6.308656592592593,
         "recommendation": "Buy",
@@ -520,7 +520,7 @@
       }
     },
     "GOOGL": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "GOOGL",
         "prediction": 6.379318363636363,
         "recommendation": "Buy",
@@ -567,7 +567,7 @@
       }
     },
     "GTLB": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "GTLB",
         "prediction": 6.441574142857142,
         "recommendation": "Buy",
@@ -614,7 +614,7 @@
       }
     },
     "HUBS": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "HUBS",
         "prediction": 6.363933666666666,
         "recommendation": "Buy",
@@ -661,7 +661,7 @@
       }
     },
     "INTU": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "INTU",
         "prediction": 6.273561783783784,
         "recommendation": "Buy",
@@ -708,7 +708,7 @@
       }
     },
     "MDB": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "MDB",
         "prediction": 6.194197435897435,
         "recommendation": "Buy",
@@ -755,7 +755,7 @@
       }
     },
     "META": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "META",
         "prediction": 6.41342941025641,
         "recommendation": "Buy",
@@ -802,7 +802,7 @@
       }
     },
     "MSFT": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "MSFT",
         "prediction": 6.577092076923076,
         "recommendation": "Buy",
@@ -849,7 +849,7 @@
       }
     },
     "NET": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "NET",
         "prediction": 5.666199736842105,
         "recommendation": "Hold",
@@ -896,7 +896,7 @@
       }
     },
     "NOW": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "NOW",
         "prediction": 6.359725666666666,
         "recommendation": "Buy",
@@ -943,7 +943,7 @@
       }
     },
     "NVDA": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "NVDA",
         "prediction": 6.475809774647887,
         "recommendation": "Buy",
@@ -990,7 +990,7 @@
       }
     },
     "OKTA": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "OKTA",
         "prediction": 5.909161319148936,
         "recommendation": "Hold",
@@ -1037,7 +1037,7 @@
       }
     },
     "ORCL": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "ORCL",
         "prediction": 6.047380363636364,
         "recommendation": "Buy",
@@ -1084,7 +1084,7 @@
       }
     },
     "PLTR": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "PLTR",
         "prediction": 4.582944692307692,
         "recommendation": "Hold",
@@ -1131,7 +1131,7 @@
       }
     },
     "SNOW": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "SNOW",
         "prediction": 6.1643427843137255,
         "recommendation": "Buy",
@@ -1178,7 +1178,7 @@
       }
     },
     "SUMO": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "SUMO",
         "prediction": 5.909090909090909,
         "recommendation": "Hold",
@@ -1225,7 +1225,7 @@
       }
     },
     "TEAM": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "TEAM",
         "prediction": 6.3297595555555555,
         "recommendation": "Buy",
@@ -1272,7 +1272,7 @@
       }
     },
     "WDAY": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "WDAY",
         "prediction": 6.118763111111111,
         "recommendation": "Buy",
@@ -1319,7 +1319,7 @@
       }
     },
     "WIX": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "WIX",
         "prediction": 6.267416296296297,
         "recommendation": "Buy",
@@ -1366,7 +1366,7 @@
       }
     },
     "ZS": {
-      "020125pre": {
+      "020325pre": {
         "symbol": "ZS",
         "prediction": 6.1297094716981135,
         "recommendation": "Buy",
