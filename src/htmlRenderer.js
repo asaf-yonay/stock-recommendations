@@ -2,48 +2,78 @@ const fs = require('fs').promises;
 const path = require('path');
 const {
     getRecommendationClass,
-    generateAnalystInfo,
     generatePriceInfo,
-    generateTechnicalSection,
-    generateExplanation
+    generateAnalystInfo,
+    generateTechnicalSection
 } = require('./utils');
 
 async function renderToFile(outputPath = 'index.html', useMock = false) {
     try {
+        console.log(`\n[renderToFile] Starting HTML generation for ${useMock ? 'mock' : 'live'} data`);
         const { loadFromCache } = require('./services/cache');
         const cacheData = await loadFromCache(useMock);
+        console.log('[renderToFile] Cache data structure:', {
+            fetchTimestamp: cacheData.fetchTimestamp,
+            dataKeys: Object.keys(cacheData.data || {}),
+        });
         return await render(cacheData, outputPath);
     } catch (error) {
-        console.error('Error rendering HTML:', error);
+        console.error('[renderToFile] Error:', error);
         throw error;
     }
 }
 
 async function render(cacheData, outputPath) {
     if (!cacheData?.data) {
+        console.error('[render] No cache data available');
         throw new Error('No cache data available');
     }
 
     const stockData = cacheData.data;
-    console.log('Processing stocks:', Object.keys(stockData).filter(k => k !== 'lastGenerationDate'));
+    const stockKeys = Object.keys(stockData).filter(k => k !== 'lastGenerationDate');
+    console.log('\n[render] Processing stocks:', stockKeys);
+    console.log('[render] Last generation date:', stockData.lastGenerationDate);
 
-    // Transform data structure to array and get latest data for each stock
     const latestStockData = Object.entries(stockData)
         .filter(([key]) => key !== 'lastGenerationDate')
         .map(([symbol, data]) => {
-            const dateKeys = Object.keys(data).filter(key => key.includes('pre')).sort();
+            console.log(`\n[render] Processing ${symbol}:`);
+            console.log(`Available dates for ${symbol}:`, Object.keys(data));
+            
+            const dateKeys = Object.keys(data).sort();
             const latestKey = dateKeys[dateKeys.length - 1];
+            
+            console.log(`Selected latest key for ${symbol}: ${latestKey}`);
+            console.log(`Data preview for ${symbol}:`, {
+                prediction: data[latestKey]?.prediction,
+                recommendation: data[latestKey]?.recommendation,
+                price: data[latestKey]?.companyInfo?.currentPrice
+            });
+
             return {
                 symbol,
                 ...data[latestKey]
             };
         })
-        .filter(data => data.companyInfo);
+        .filter(data => {
+            if (!data.companyInfo) {
+                console.warn(`[render] Warning: No company info for ${data.symbol}`);
+                return false;
+            }
+            return true;
+        });
 
-    // Sort stocks by prediction score
+    console.log('\n[render] Processed stock count:', latestStockData.length);
+
     const sortedData = latestStockData.sort((a, b) => {
         return (b.prediction || 0) - (a.prediction || 0);
     });
+
+    console.log('[render] Top 3 predictions:', sortedData.slice(0, 3).map(stock => ({
+        symbol: stock.symbol,
+        prediction: stock.prediction,
+        recommendation: stock.recommendation
+    })));
 
     const htmlContent = generateHtml({
         data: sortedData,
@@ -51,11 +81,16 @@ async function render(cacheData, outputPath) {
     });
     
     await fs.writeFile(outputPath, htmlContent);
-    console.log(`HTML file ${outputPath} updated successfully`);
+    console.log(`\n[render] HTML file ${outputPath} updated successfully`);
+    console.log(`[render] Generated content for ${sortedData.length} stocks`);
 }
 
-function generateHtml(results) {
-    const { data, fetchTimestamp } = results;
+function generateHtml({ data, fetchTimestamp }) {
+    console.log('\n[generateHtml] Generating HTML with:', {
+        stockCount: data.length,
+        fetchTimestamp
+    });
+
     const renderTimestamp = new Date().toLocaleString('en-US', {
         year: 'numeric',
         month: 'numeric',
@@ -64,11 +99,7 @@ function generateHtml(results) {
         minute: '2-digit',
         hour12: false
     });
-    
-    const stockRows = data
-        .map(stock => generateStockRow(stock))
-        .join('');
-    
+
     return `
     <!DOCTYPE html>
     <html>
@@ -82,26 +113,31 @@ function generateHtml(results) {
             <div class="header-content">
                 <h1>Stock Market Analysis</h1>
                 <div class="timestamps">
-                    <p>Data fetched on: ${fetchTimestamp}</p>
-                    <p>Report generated on: ${renderTimestamp}</p>
+                    <p>Data from: ${fetchTimestamp}</p>
+                    <p>Generated: ${renderTimestamp}</p>
                 </div>
             </div>
         </header>
         <div class="stock-list">
-            ${stockRows}
+            ${data.map(stock => {
+                console.log(`[generateHtml] Generating card for ${stock.symbol}`);
+                return generateStockCard(stock);
+            }).join('\n')}
         </div>
         <script src="src/scripts/fed-scripts.js"></script>
     </body>
     </html>`;
 }
 
-function generateStockRow(stock) {
-    if (!stock?.companyInfo) return '';
+function generateStockCard(stock) {
+    if (!stock?.companyInfo) {
+        console.warn(`[generateStockCard] Missing company info for stock:`, stock?.symbol);
+        return '';
+    }
 
     const recommendation = stock.recommendation?.toLowerCase() || 'hold';
     const score = (parseFloat(stock.prediction || 0) * 10).toFixed(1);
     
-    // Get current and previous values
     const currentRsi = stock.technicalIndicators?.rsi;
     const previousRsi = stock.previousData?.technicalIndicators?.rsi;
     const rsiChange = currentRsi && previousRsi ? currentRsi - previousRsi : 0;

@@ -9,8 +9,25 @@ function getRecommendationClass(recommendation) {
     return classMap[recommendation] || '';
 }
 
+function getRecommendationFromScore(score) {
+    if (score >= 7.5) return 'Strong Buy';
+    if (score >= 6.5) return 'Buy';
+    if (score >= 4.5) return 'Hold';
+    if (score >= 3.5) return 'Sell';
+    return 'Strong Sell';
+}
+
+function formatPrice(price) {
+    return price ? `$${Number(price).toFixed(2)}` : 'N/A';
+}
+
+function formatPercentage(value) {
+    if (!value) return 'N/A';
+    const sign = value > 0 ? '+' : '';
+    return `${sign}${Number(value).toFixed(2)}%`;
+}
+
 function generatePriceInfo(stock) {
-    // Early return if required data is missing
     if (!stock?.companyInfo?.currentPrice) {
         return `
             <div class="metric price-metric">
@@ -29,20 +46,20 @@ function generatePriceInfo(stock) {
             <h3>Price Information</h3>
             <div class="kpi-grid">
                 <div class="kpi" title="Current trading price of the stock">Current Price:</div>
-                <div class="kpi-value">$${currentPrice?.toFixed(2) || 'N/A'}</div>
+                <div class="kpi-value">${formatPrice(currentPrice)}</div>
                 
                 <div class="kpi" title="Percentage change in price over the last trading day">Day Change:</div>
                 <div class="kpi-value ${dayChange > 0 ? 'positive' : 'negative'}">
-                    ${dayChange ? `${dayChange > 0 ? '+' : ''}${dayChange.toFixed(2)}%` : 'N/A'}
+                    ${formatPercentage(dayChange)}
                 </div>
                 
                 <div class="kpi" title="Total market value of the company">Market Cap:</div>
-                <div class="kpi-value">${marketCap || 'N/A'}</div>
+                <div class="kpi-value">${marketCap}</div>
                 
                 <div class="kpi" title="Price range during the current trading day">Day Range:</div>
                 <div class="kpi-value">
                     ${dayRange?.low && dayRange?.high 
-                        ? `$${dayRange.low.toFixed(2)} - $${dayRange.high.toFixed(2)}`
+                        ? `${formatPrice(dayRange.low)} - ${formatPrice(dayRange.high)}`
                         : 'N/A'}
                 </div>
             </div>
@@ -99,82 +116,87 @@ function generatePriceTargets(stock) {
     `;
 }
 
-function generateAnalystBar(breakdown) {
-    if (!breakdown) return '';
-
-    const total = (breakdown.strongBuy || 0) + 
-                 (breakdown.buy || 0) + 
-                 (breakdown.hold || 0) + 
-                 (breakdown.sell || 0) + 
-                 (breakdown.strongSell || 0);
-
-    if (total === 0) return '';
-
-    const getWidth = (count) => ((count || 0) / total * 100).toFixed(1);
-
-    return `
-        <div class="analyst-bar">
-            <div class="strong-buy" style="width: ${getWidth(breakdown.strongBuy)}%"></div>
-            <div class="buy" style="width: ${getWidth(breakdown.buy)}%"></div>
-            <div class="hold" style="width: ${getWidth(breakdown.hold)}%"></div>
-            <div class="sell" style="width: ${getWidth(breakdown.sell)}%"></div>
-            <div class="strong-sell" style="width: ${getWidth(breakdown.strongSell)}%"></div>
-        </div>
-    `;
-}
-
 function generateAnalystInfo(stock) {
-    const consensusScore = stock.analystRecommendations?.consensusScore;
-    const breakdown = stock.analystRecommendations?.breakdown || {};
-    
+    if (!stock?.analystRecommendations) return '';
+
+    const { consensusScore, breakdown, total } = stock.analystRecommendations;
+    const { strongBuy, buy, hold, sell, strongSell } = breakdown;
+
     return `
         <div class="metric analyst-metric">
             <h3>Analyst Recommendations</h3>
             <div class="kpi-grid">
                 <div class="kpi" title="Average analyst rating on a scale of 1-10">Consensus:</div>
-                <div class="kpi-value">${consensusScore ? consensusScore.toFixed(1) : 'N/A'}/10</div>
+                <div class="kpi-value">${consensusScore.toFixed(1)}/10</div>
                 
                 <div class="kpi" title="Number of analysts giving Strong Buy rating">Strong Buy:</div>
-                <div class="kpi-value">${breakdown.strongBuy || 0}</div>
+                <div class="kpi-value">${strongBuy}</div>
                 
                 <div class="kpi" title="Number of analysts giving Buy rating">Buy:</div>
-                <div class="kpi-value">${breakdown.buy || 0}</div>
+                <div class="kpi-value">${buy}</div>
                 
                 <div class="kpi" title="Number of analysts giving Hold rating">Hold:</div>
-                <div class="kpi-value">${breakdown.hold || 0}</div>
+                <div class="kpi-value">${hold}</div>
                 
                 <div class="kpi" title="Number of analysts giving Sell rating">Sell:</div>
-                <div class="kpi-value">${breakdown.sell || 0}</div>
+                <div class="kpi-value">${sell}</div>
                 
                 <div class="kpi" title="Number of analysts giving Strong Sell rating">Strong Sell:</div>
-                <div class="kpi-value">${breakdown.strongSell || 0}</div>
+                <div class="kpi-value">${strongSell || 0}</div>
             </div>
-            <div class="analyst-bar-container" title="Distribution of analyst recommendations">
-                ${generateAnalystBar(stock.analystRecommendations?.breakdown)}
+            ${generateAnalystBar(breakdown, total)}
+        </div>
+    `;
+}
+
+function generateAnalystBar(breakdown, total) {
+    const { strongBuy, buy, hold, sell, strongSell = 0 } = breakdown;
+    
+    const percentages = {
+        strongBuy: (strongBuy / total) * 100,
+        buy: (buy / total) * 100,
+        hold: (hold / total) * 100,
+        sell: (sell / total) * 100,
+        strongSell: (strongSell / total) * 100
+    };
+
+    return `
+        <div class="analyst-bar-container" title="Distribution of analyst recommendations">
+            <div class="analyst-bar">
+                <div class="strong-buy" style="width: ${percentages.strongBuy}%"></div>
+                <div class="buy" style="width: ${percentages.buy}%"></div>
+                <div class="hold" style="width: ${percentages.hold}%"></div>
+                <div class="sell" style="width: ${percentages.sell}%"></div>
+                <div class="strong-sell" style="width: ${percentages.strongSell}%"></div>
             </div>
         </div>
     `;
 }
 
 function generateTechnicalSection(stock) {
+    if (!stock?.technicalIndicators || !stock?.trends?.tradingMetrics) return '';
+
+    const { rsi, macdSignal, trendStrength } = stock.technicalIndicators;
+    const { support, resistance } = stock.trends.tradingMetrics;
+
     return `
         <div class="technical-metrics">
             <div class="metric">
                 <h3>Technical Indicators</h3>
                 <div class="kpi-grid">
                     <div class="kpi" title="Relative Strength Index - measures momentum (0-100)">RSI:</div>
-                    <div class="kpi-value">${stock.technicalIndicators.rsi}</div>
+                    <div class="kpi-value">${rsi}</div>
                     
                     <div class="kpi" title="Moving Average Convergence Divergence signal">MACD Signal:</div>
-                    <div class="kpi-value ${stock.technicalIndicators.macdSignal === 'Bullish' ? 'positive' : 'negative'}">
-                        ${stock.technicalIndicators.macdSignal}
+                    <div class="kpi-value ${macdSignal.toLowerCase().includes('bullish') ? 'positive' : 'negative'}">
+                        ${macdSignal}
                     </div>
                     
                     <div class="kpi" title="Price level where buying pressure is expected">Support Level:</div>
-                    <div class="kpi-value">$${stock.trends.tradingMetrics.support.toFixed(2)}</div>
+                    <div class="kpi-value">${formatPrice(support)}</div>
                     
                     <div class="kpi" title="Price level where selling pressure is expected">Resistance Level:</div>
-                    <div class="kpi-value">$${stock.trends.tradingMetrics.resistance.toFixed(2)}</div>
+                    <div class="kpi-value">${formatPrice(resistance)}</div>
                 </div>
             </div>
             <div class="metric">
@@ -185,31 +207,16 @@ function generateTechnicalSection(stock) {
     `;
 }
 
-function generateExplanation(analysis) {
+function generateExplanation(stock) {
     const explanations = [];
     
-    // Technical Analysis
-    explanations.push(`Technical Analysis: ${analysis.technicalIndicators.macdSignal} trend with RSI at ${analysis.technicalIndicators.rsi}`);
+    explanations.push(`Technical Analysis: ${stock.technicalIndicators.macdSignal} trend with RSI at ${stock.technicalIndicators.rsi}`);
     
-    // Price Movement
-    if (Math.abs(analysis.trends.priceChange) > 2) {
-        explanations.push(
-            analysis.trends.priceChange > 0 
-                ? `Strong positive price movement of ${analysis.trends.priceChange.toFixed(2)}%`
-                : `Price decline of ${Math.abs(analysis.trends.priceChange).toFixed(2)}%`
-        );
+    if (stock.trends?.priceChange) {
+        explanations.push(`Trading between support (${formatPrice(stock.trends.tradingMetrics.support)}) and resistance (${formatPrice(stock.trends.tradingMetrics.resistance)})`);
     }
 
-    // Risk Assessment
-    const riskLevel = analysis.riskMetrics.overallRisk > 0.7 ? 'high' : 
-                     analysis.riskMetrics.overallRisk > 0.3 ? 'moderate' : 'low';
-    explanations.push(`Risk level is ${riskLevel} based on volatility and momentum metrics`);
-
-    // Trading Range
-    explanations.push(`Trading between support ($${analysis.trends.tradingMetrics.support.toFixed(2)}) and resistance ($${analysis.trends.tradingMetrics.resistance.toFixed(2)})`);
-
-    // Market Cap Context
-    explanations.push(`${analysis.companyInfo.marketCap} stock with ${analysis.technicalIndicators.trendStrength}% trend strength`);
+    explanations.push(`${stock.companyInfo.marketCap} stock with ${stock.technicalIndicators.trendStrength}% trend strength`);
 
     return explanations.join('. ') + '.';
 }
@@ -226,12 +233,15 @@ function generateMetricsSection(stock) {
 
 module.exports = {
     getRecommendationClass,
+    getRecommendationFromScore,
+    formatPrice,
+    formatPercentage,
     generatePriceInfo,
+    generatePriceTargets,
     generateAnalystInfo,
     generateTechnicalSection,
     generateAnalystBar,
     generateExplanation,
-    generatePriceTargets,
     generateMetricsSection,
     formatAnalystBreakdown(recommendations) {
         const { strongBuy, buy, hold, sell } = recommendations.breakdown;

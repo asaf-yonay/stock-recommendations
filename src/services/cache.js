@@ -14,23 +14,29 @@ async function ensureCacheDirectory() {
     }
 }
 
-async function saveToCache(data, timestamp, isMock = false) {
+async function saveToCache(data, isMock = false) {
     await ensureCacheDirectory();
-    const cacheData = {
-        fetchTimestamp: timestamp,
-        data
-    };
     const filePath = isMock ? MOCK_CACHE_FILE : CACHE_FILE;
-    await fs.writeFile(filePath, JSON.stringify(cacheData, null, 2));
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2));
 }
 
 async function loadFromCache(useMock = false) {
     try {
         const filePath = useMock ? MOCK_CACHE_FILE : CACHE_FILE;
         const cacheContent = await fs.readFile(filePath, 'utf-8');
-        return JSON.parse(cacheContent);
+        const parsed = JSON.parse(cacheContent);
+        
+        // Ensure we always return a properly structured object
+        return {
+            fetchTimestamp: parsed.fetchTimestamp || new Date().toISOString(),
+            data: parsed.data || {}
+        };
     } catch (error) {
-        return null;
+        // Return empty structure if file doesn't exist
+        return {
+            fetchTimestamp: new Date().toISOString(),
+            data: {}
+        };
     }
 }
 
