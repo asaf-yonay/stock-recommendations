@@ -1,5 +1,5 @@
 {
-  "fetchTimestamp": "2025-02-04T21:24:02.447Z",
+  "fetchTimestamp": "2025-02-05T18:19:50.096Z",
   "data": {
     "lastGenerationDate": "2/3/2025, 07:53",
     "fetchTimestamp": "2025-02-03T19:50:41.021Z",
@@ -2610,6 +2610,46 @@
             "high": 233.13
           }
         }
+      },
+      "020525in": {
+        "symbol": "AAPL",
+        "prediction": 5.999833018518519,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -1.2457,
+          "volatility": 0.012457000000000001,
+          "momentum": -0.012457000000000001,
+          "tradingMetrics": {
+            "support": 218.405,
+            "resistance": 241.395
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.037037037037037,
+          "breakdown": {
+            "strongBuy": 12,
+            "buy": 25,
+            "hold": 13,
+            "sell": 3,
+            "strongSell": 1
+          },
+          "total": 54
+        },
+        "technicalIndicators": {
+          "rsi": "49.38",
+          "macdSignal": "Bearish",
+          "trendStrength": 1.2457
+        },
+        "companyInfo": {
+          "name": "Apple Inc",
+          "currentPrice": 229.9,
+          "dayChange": -1.2457,
+          "marketCap": "$3497.1T",
+          "dayRange": {
+            "low": 226.5,
+            "high": 231.28
+          }
+        }
       }
     },
     "ADBE": {
@@ -2690,6 +2730,46 @@
           "dayRange": {
             "low": 434.26,
             "high": 443.58
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "ADBE",
+        "prediction": 6.271576777777778,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -0.4134,
+          "volatility": 0.004134,
+          "momentum": -0.004134,
+          "tradingMetrics": {
+            "support": 416.4895,
+            "resistance": 460.33050000000003
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.555555555555555,
+          "breakdown": {
+            "strongBuy": 14,
+            "buy": 19,
+            "hold": 11,
+            "sell": 1,
+            "strongSell": 0
+          },
+          "total": 45
+        },
+        "technicalIndicators": {
+          "rsi": "49.79",
+          "macdSignal": "Bearish",
+          "trendStrength": 0.4134
+        },
+        "companyInfo": {
+          "name": "Adobe Inc",
+          "currentPrice": 438.41,
+          "dayChange": -0.4134,
+          "marketCap": "$191.6T",
+          "dayRange": {
+            "low": 436.27,
+            "high": 444.95
           }
         }
       }
@@ -2774,6 +2854,46 @@
             "high": 242.52
           }
         }
+      },
+      "020525in": {
+        "symbol": "AMZN",
+        "prediction": 6.4778742564102565,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -1.9024,
+          "volatility": 0.019024,
+          "momentum": -0.019024,
+          "tradingMetrics": {
+            "support": 225.58225,
+            "resistance": 249.32775000000004
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 8.012820512820513,
+          "breakdown": {
+            "strongBuy": 21,
+            "buy": 52,
+            "hold": 5,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 78
+        },
+        "technicalIndicators": {
+          "rsi": "49.05",
+          "macdSignal": "Bearish",
+          "trendStrength": 1.9023999999999999
+        },
+        "companyInfo": {
+          "name": "Amazon.com Inc",
+          "currentPrice": 237.455,
+          "dayChange": -1.9024,
+          "marketCap": "$2545.3T",
+          "dayRange": {
+            "low": 235.2,
+            "high": 238.79
+          }
+        }
       }
     },
     "APPN": {
@@ -2854,6 +2974,46 @@
           "dayRange": {
             "low": 34.1801,
             "high": 35.26
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "APPN",
+        "prediction": 4.617528115384616,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0.1429,
+          "volatility": 0.001429,
+          "momentum": 0.001429,
+          "tradingMetrics": {
+            "support": 33.29749999999999,
+            "resistance": 36.8025
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 4.230769230769231,
+          "breakdown": {
+            "strongBuy": 1,
+            "buy": 0,
+            "hold": 8,
+            "sell": 2,
+            "strongSell": 2
+          },
+          "total": 13
+        },
+        "technicalIndicators": {
+          "rsi": "50.07",
+          "macdSignal": "Bullish",
+          "trendStrength": 0.1429
+        },
+        "companyInfo": {
+          "name": "Appian Corp",
+          "currentPrice": 35.05,
+          "dayChange": 0.1429,
+          "marketCap": "$2.6T",
+          "dayRange": {
+            "low": 34.375,
+            "high": 35.47
           }
         }
       }
@@ -2938,6 +3098,46 @@
             "high": 30.04
           }
         }
+      },
+      "020525in": {
+        "symbol": "CFLT",
+        "prediction": 6.129251371794872,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0.4971,
+          "volatility": 0.004971,
+          "momentum": 0.004971,
+          "tradingMetrics": {
+            "support": 27.84925,
+            "resistance": 30.78075
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.243589743589744,
+          "breakdown": {
+            "strongBuy": 8,
+            "buy": 20,
+            "hold": 10,
+            "sell": 1,
+            "strongSell": 0
+          },
+          "total": 39
+        },
+        "technicalIndicators": {
+          "rsi": "50.25",
+          "macdSignal": "Bullish",
+          "trendStrength": 0.4971
+        },
+        "companyInfo": {
+          "name": "Confluent Inc",
+          "currentPrice": 29.315,
+          "dayChange": 0.4971,
+          "marketCap": "$9.6T",
+          "dayRange": {
+            "low": 28.7,
+            "high": 29.4
+          }
+        }
       }
     },
     "CRM": {
@@ -3018,6 +3218,46 @@
           "dayRange": {
             "low": 338.6722,
             "high": 346.93
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "CRM",
+        "prediction": 6.183383714285714,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0.0232,
+          "volatility": 0.00023199999999999997,
+          "momentum": 0.00023199999999999997,
+          "tradingMetrics": {
+            "support": 327.009,
+            "resistance": 361.43100000000004
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.366071428571429,
+          "breakdown": {
+            "strongBuy": 14,
+            "buy": 29,
+            "hold": 11,
+            "sell": 0,
+            "strongSell": 2
+          },
+          "total": 56
+        },
+        "technicalIndicators": {
+          "rsi": "50.01",
+          "macdSignal": "Bullish",
+          "trendStrength": 0.0232
+        },
+        "companyInfo": {
+          "name": "Salesforce Inc",
+          "currentPrice": 344.22,
+          "dayChange": 0.0232,
+          "marketCap": "$329.3T",
+          "dayRange": {
+            "low": 338.8725,
+            "high": 346.97
           }
         }
       }
@@ -3102,6 +3342,46 @@
             "high": 146.47
           }
         }
+      },
+      "020525in": {
+        "symbol": "DDOG",
+        "prediction": 6.373232224489795,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -1.9886,
+          "volatility": 0.019886,
+          "momentum": -0.019886,
+          "tradingMetrics": {
+            "support": 135.7835,
+            "resistance": 150.0765
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.8061224489795915,
+          "breakdown": {
+            "strongBuy": 13,
+            "buy": 29,
+            "hold": 7,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 49
+        },
+        "technicalIndicators": {
+          "rsi": "49.01",
+          "macdSignal": "Bearish",
+          "trendStrength": 1.9886000000000001
+        },
+        "companyInfo": {
+          "name": "Datadog Inc",
+          "currentPrice": 142.93,
+          "dayChange": -1.9886,
+          "marketCap": "$49.5T",
+          "dayRange": {
+            "low": 140.3,
+            "high": 144.64
+          }
+        }
       }
     },
     "DOCN": {
@@ -3182,6 +3462,46 @@
           "dayRange": {
             "low": 40.32,
             "high": 41.205
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "DOCN",
+        "prediction": 6.0131915,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 5.0461,
+          "volatility": 0.050461,
+          "momentum": 0.050461,
+          "tradingMetrics": {
+            "support": 40.73581,
+            "resistance": 45.023790000000005
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 6.875,
+          "breakdown": {
+            "strongBuy": 4,
+            "buy": 8,
+            "hold": 7,
+            "sell": 1,
+            "strongSell": 0
+          },
+          "total": 20
+        },
+        "technicalIndicators": {
+          "rsi": "52.52",
+          "macdSignal": "Bullish",
+          "trendStrength": 5.0461
+        },
+        "companyInfo": {
+          "name": "DigitalOcean Holdings Inc",
+          "currentPrice": 42.8798,
+          "dayChange": 5.0461,
+          "marketCap": "$3.8T",
+          "dayRange": {
+            "low": 40.74,
+            "high": 43.23
           }
         }
       }
@@ -3266,6 +3586,46 @@
             "high": 9.53
           }
         }
+      },
+      "020525in": {
+        "symbol": "DOMO",
+        "prediction": 5.9507655,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -3.2823,
+          "volatility": 0.032823000000000005,
+          "momentum": -0.032823000000000005,
+          "tradingMetrics": {
+            "support": 8.398,
+            "resistance": 9.282
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7,
+          "breakdown": {
+            "strongBuy": 2,
+            "buy": 4,
+            "hold": 4,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 10
+        },
+        "technicalIndicators": {
+          "rsi": "48.36",
+          "macdSignal": "Bearish",
+          "trendStrength": 3.2823000000000007
+        },
+        "companyInfo": {
+          "name": "Domo Inc",
+          "currentPrice": 8.84,
+          "dayChange": -3.2823,
+          "marketCap": "$357.4B",
+          "dayRange": {
+            "low": 8.6601,
+            "high": 9.38
+          }
+        }
       }
     },
     "ESTC": {
@@ -3346,6 +3706,46 @@
           "dayRange": {
             "low": 112.42,
             "high": 115.58
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "ESTC",
+        "prediction": 6.303651411764706,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -1.3252,
+          "volatility": 0.013252,
+          "momentum": -0.013252,
+          "tradingMetrics": {
+            "support": 108.22399999999999,
+            "resistance": 119.61600000000001
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.647058823529412,
+          "breakdown": {
+            "strongBuy": 10,
+            "buy": 16,
+            "hold": 8,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 34
+        },
+        "technicalIndicators": {
+          "rsi": "49.34",
+          "macdSignal": "Bearish",
+          "trendStrength": 1.3252
+        },
+        "companyInfo": {
+          "name": "Elastic NV",
+          "currentPrice": 113.92,
+          "dayChange": -1.3252,
+          "marketCap": "$12.0T",
+          "dayRange": {
+            "low": 112.92,
+            "high": 114.6
           }
         }
       }
@@ -3430,6 +3830,46 @@
             "high": 36.36
           }
         }
+      },
+      "020525in": {
+        "symbol": "FROG",
+        "prediction": 6.3432120925925926,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0.0413,
+          "volatility": 0.000413,
+          "momentum": 0.000413,
+          "tradingMetrics": {
+            "support": 34.53724999999999,
+            "resistance": 38.17275
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.685185185185185,
+          "breakdown": {
+            "strongBuy": 6,
+            "buy": 17,
+            "hold": 4,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 27
+        },
+        "technicalIndicators": {
+          "rsi": "50.02",
+          "macdSignal": "Bullish",
+          "trendStrength": 0.0413
+        },
+        "companyInfo": {
+          "name": "Jfrog Ltd",
+          "currentPrice": 36.355,
+          "dayChange": 0.0413,
+          "marketCap": "$4.1T",
+          "dayRange": {
+            "low": 36.01,
+            "high": 36.68
+          }
+        }
       }
     },
     "GOOGL": {
@@ -3510,6 +3950,46 @@
           "dayRange": {
             "low": 202.81,
             "high": 207.05
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "GOOGL",
+        "prediction": 6.23036246969697,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -7.6223,
+          "volatility": 0.076223,
+          "momentum": -0.076223,
+          "tradingMetrics": {
+            "support": 181.11655,
+            "resistance": 200.18145
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.6893939393939394,
+          "breakdown": {
+            "strongBuy": 18,
+            "buy": 35,
+            "hold": 13,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 66
+        },
+        "technicalIndicators": {
+          "rsi": "46.19",
+          "macdSignal": "Bearish",
+          "trendStrength": 7.6223
+        },
+        "companyInfo": {
+          "name": "Alphabet Inc",
+          "currentPrice": 190.649,
+          "dayChange": -7.6223,
+          "marketCap": "$2534.3T",
+          "dayRange": {
+            "low": 188.03,
+            "high": 192.75
           }
         }
       }
@@ -3594,6 +4074,46 @@
             "high": 72.575
           }
         }
+      },
+      "020525in": {
+        "symbol": "GTLB",
+        "prediction": 6.425507642857143,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 2.1767,
+          "volatility": 0.021766999999999998,
+          "momentum": 0.021766999999999998,
+          "tradingMetrics": {
+            "support": 69.34525000000001,
+            "resistance": 76.64475
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.785714285714286,
+          "breakdown": {
+            "strongBuy": 8,
+            "buy": 23,
+            "hold": 4,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 35
+        },
+        "technicalIndicators": {
+          "rsi": "51.09",
+          "macdSignal": "Bullish",
+          "trendStrength": 2.1767
+        },
+        "companyInfo": {
+          "name": "GitLab Inc",
+          "currentPrice": 72.995,
+          "dayChange": 2.1767,
+          "marketCap": "$11.6T",
+          "dayRange": {
+            "low": 71.14,
+            "high": 73.28
+          }
+        }
       }
     },
     "HUBS": {
@@ -3674,6 +4194,46 @@
           "dayRange": {
             "low": 760.88,
             "high": 773.1
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "HUBS",
+        "prediction": 6.348172444444445,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 1.9152,
+          "volatility": 0.019152,
+          "momentum": 0.019152,
+          "tradingMetrics": {
+            "support": 739.32325,
+            "resistance": 817.14675
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.638888888888889,
+          "breakdown": {
+            "strongBuy": 11,
+            "buy": 16,
+            "hold": 9,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 36
+        },
+        "technicalIndicators": {
+          "rsi": "50.96",
+          "macdSignal": "Bullish",
+          "trendStrength": 1.9151999999999998
+        },
+        "companyInfo": {
+          "name": "HubSpot Inc",
+          "currentPrice": 778.235,
+          "dayChange": 1.9152,
+          "marketCap": "$39.4T",
+          "dayRange": {
+            "low": 763.2,
+            "high": 780.01
           }
         }
       }
@@ -3758,6 +4318,46 @@
             "high": 608.48
           }
         }
+      },
+      "020525in": {
+        "symbol": "INTU",
+        "prediction": 6.235753,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -0.9498,
+          "volatility": 0.009498,
+          "momentum": -0.009498,
+          "tradingMetrics": {
+            "support": 556.795,
+            "resistance": 615.4050000000001
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.5,
+          "breakdown": {
+            "strongBuy": 10,
+            "buy": 18,
+            "hold": 8,
+            "sell": 1,
+            "strongSell": 0
+          },
+          "total": 37
+        },
+        "technicalIndicators": {
+          "rsi": "49.53",
+          "macdSignal": "Bearish",
+          "trendStrength": 0.9498
+        },
+        "companyInfo": {
+          "name": "Intuit Inc",
+          "currentPrice": 586.1,
+          "dayChange": -0.9498,
+          "marketCap": "$165.6T",
+          "dayRange": {
+            "low": 580.095,
+            "high": 593.585
+          }
+        }
       }
     },
     "MDB": {
@@ -3838,6 +4438,46 @@
           "dayRange": {
             "low": 268.0301,
             "high": 277.17
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "MDB",
+        "prediction": 6.243971195121951,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 1.6306,
+          "volatility": 0.016306,
+          "momentum": 0.016306,
+          "tradingMetrics": {
+            "support": 266.4465,
+            "resistance": 294.49350000000004
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.439024390243903,
+          "breakdown": {
+            "strongBuy": 11,
+            "buy": 21,
+            "hold": 7,
+            "sell": 1,
+            "strongSell": 1
+          },
+          "total": 41
+        },
+        "technicalIndicators": {
+          "rsi": "50.82",
+          "macdSignal": "Bullish",
+          "trendStrength": 1.6306
+        },
+        "companyInfo": {
+          "name": "MongoDB Inc",
+          "currentPrice": 280.47,
+          "dayChange": 1.6306,
+          "marketCap": "$20.6T",
+          "dayRange": {
+            "low": 270.62,
+            "high": 284.01
           }
         }
       }
@@ -3922,6 +4562,46 @@
             "high": 707.71
           }
         }
+      },
+      "020525in": {
+        "symbol": "META",
+        "prediction": 6.426537051282051,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0.017,
+          "volatility": 0.00017,
+          "momentum": 0.00017,
+          "tradingMetrics": {
+            "support": 669.0944999999999,
+            "resistance": 739.5255
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.852564102564102,
+          "breakdown": {
+            "strongBuy": 23,
+            "buy": 45,
+            "hold": 8,
+            "sell": 2,
+            "strongSell": 0
+          },
+          "total": 78
+        },
+        "technicalIndicators": {
+          "rsi": "50.01",
+          "macdSignal": "Bullish",
+          "trendStrength": 0.017
+        },
+        "companyInfo": {
+          "name": "Meta Platforms Inc",
+          "currentPrice": 704.31,
+          "dayChange": 0.017,
+          "marketCap": "$1784.3T",
+          "dayRange": {
+            "low": 699.01,
+            "high": 718.14
+          }
+        }
       }
     },
     "MSFT": {
@@ -4002,6 +4682,46 @@
           "dayRange": {
             "low": 409.74,
             "high": 413.9199
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "MSFT",
+        "prediction": 6.557564807692307,
+        "recommendation": "Buy",
+        "trends": {
+          "priceChange": -0.0085,
+          "volatility": 0.000085,
+          "momentum": -0.000085,
+          "tradingMetrics": {
+            "support": 391.71824999999995,
+            "resistance": 432.95175
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 8.115384615384615,
+          "breakdown": {
+            "strongBuy": 22,
+            "buy": 37,
+            "hold": 6,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 65
+        },
+        "technicalIndicators": {
+          "rsi": "50.00",
+          "macdSignal": "Bearish",
+          "trendStrength": 0.0085
+        },
+        "companyInfo": {
+          "name": "Microsoft Corp",
+          "currentPrice": 412.335,
+          "dayChange": -0.0085,
+          "marketCap": "$3065.6T",
+          "dayRange": {
+            "low": 410.4,
+            "high": 413.827
           }
         }
       }
@@ -4086,6 +4806,46 @@
             "high": 141.67
           }
         }
+      },
+      "020525in": {
+        "symbol": "NET",
+        "prediction": 5.730821473684211,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 2.6688,
+          "volatility": 0.026688,
+          "momentum": 0.026688,
+          "tradingMetrics": {
+            "support": 136.68599999999998,
+            "resistance": 151.074
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 6.381578947368421,
+          "breakdown": {
+            "strongBuy": 7,
+            "buy": 11,
+            "hold": 17,
+            "sell": 2,
+            "strongSell": 1
+          },
+          "total": 38
+        },
+        "technicalIndicators": {
+          "rsi": "51.33",
+          "macdSignal": "Bullish",
+          "trendStrength": 2.6688
+        },
+        "companyInfo": {
+          "name": "Cloudflare Inc",
+          "currentPrice": 143.88,
+          "dayChange": 2.6688,
+          "marketCap": "$48.1T",
+          "dayRange": {
+            "low": 139.04,
+            "high": 144.1
+          }
+        }
       }
     },
     "NOW": {
@@ -4166,6 +4926,46 @@
           "dayRange": {
             "low": 998.3339,
             "high": 1043.45
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "NOW",
+        "prediction": 6.373022816326531,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 1.3988,
+          "volatility": 0.013988,
+          "momentum": 0.013988,
+          "tradingMetrics": {
+            "support": 973.0469999999999,
+            "resistance": 1075.473
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.704081632653061,
+          "breakdown": {
+            "strongBuy": 14,
+            "buy": 27,
+            "hold": 7,
+            "sell": 0,
+            "strongSell": 1
+          },
+          "total": 49
+        },
+        "technicalIndicators": {
+          "rsi": "50.70",
+          "macdSignal": "Bullish",
+          "trendStrength": 1.3988
+        },
+        "companyInfo": {
+          "name": "ServiceNow Inc",
+          "currentPrice": 1024.26,
+          "dayChange": 1.3988,
+          "marketCap": "$208.1T",
+          "dayRange": {
+            "low": 1006.04,
+            "high": 1028.85
           }
         }
       }
@@ -4250,6 +5050,46 @@
             "high": 121.2
           }
         }
+      },
+      "020525in": {
+        "symbol": "NVDA",
+        "prediction": 6.621181014492754,
+        "recommendation": "Buy",
+        "trends": {
+          "priceChange": 4.214,
+          "volatility": 0.042140000000000004,
+          "momentum": 0.042140000000000004,
+          "tradingMetrics": {
+            "support": 117.467405,
+            "resistance": 129.83239500000002
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 8.115942028985508,
+          "breakdown": {
+            "strongBuy": 24,
+            "buy": 38,
+            "hold": 7,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 69
+        },
+        "technicalIndicators": {
+          "rsi": "52.11",
+          "macdSignal": "Bullish",
+          "trendStrength": 4.214
+        },
+        "companyInfo": {
+          "name": "NVIDIA Corp",
+          "currentPrice": 123.6499,
+          "dayChange": 4.214,
+          "marketCap": "$2905.7T",
+          "dayRange": {
+            "low": 119.08,
+            "high": 124.64
+          }
+        }
       }
     },
     "OKTA": {
@@ -4330,6 +5170,46 @@
           "dayRange": {
             "low": 91.6,
             "high": 94.45
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "OKTA",
+        "prediction": 5.997802808510638,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 2.6904,
+          "volatility": 0.026903999999999997,
+          "momentum": 0.026903999999999997,
+          "tradingMetrics": {
+            "support": 92.10249999999999,
+            "resistance": 101.79750000000001
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 6.914893617021277,
+          "breakdown": {
+            "strongBuy": 10,
+            "buy": 17,
+            "hold": 19,
+            "sell": 1,
+            "strongSell": 0
+          },
+          "total": 47
+        },
+        "technicalIndicators": {
+          "rsi": "51.35",
+          "macdSignal": "Bullish",
+          "trendStrength": 2.6904
+        },
+        "companyInfo": {
+          "name": "Okta Inc",
+          "currentPrice": 96.95,
+          "dayChange": 2.6904,
+          "marketCap": "$16.2T",
+          "dayRange": {
+            "low": 94.39,
+            "high": 96.96
           }
         }
       }
@@ -4414,6 +5294,46 @@
             "high": 170.4
           }
         }
+      },
+      "020525in": {
+        "symbol": "ORCL",
+        "prediction": 6.080794555555555,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 1.6826,
+          "volatility": 0.016826,
+          "momentum": 0.016826,
+          "tradingMetrics": {
+            "support": 162.17925,
+            "resistance": 179.25075
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.111111111111111,
+          "breakdown": {
+            "strongBuy": 11,
+            "buy": 18,
+            "hold": 15,
+            "sell": 0,
+            "strongSell": 1
+          },
+          "total": 45
+        },
+        "technicalIndicators": {
+          "rsi": "50.84",
+          "macdSignal": "Bullish",
+          "trendStrength": 1.6826
+        },
+        "companyInfo": {
+          "name": "Oracle Corp",
+          "currentPrice": 170.715,
+          "dayChange": 1.6826,
+          "marketCap": "$469.6T",
+          "dayRange": {
+            "low": 167.42,
+            "high": 171.82
+          }
+        }
       }
     },
     "PLTR": {
@@ -4494,6 +5414,46 @@
           "dayRange": {
             "low": 100.51,
             "high": 106.91
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "PLTR",
+        "prediction": 4.626189538461539,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -2.4848,
+          "volatility": 0.024848,
+          "momentum": -0.024848,
+          "tradingMetrics": {
+            "support": 96.1875,
+            "resistance": 106.3125
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 4.326923076923077,
+          "breakdown": {
+            "strongBuy": 2,
+            "buy": 1,
+            "hold": 15,
+            "sell": 4,
+            "strongSell": 4
+          },
+          "total": 26
+        },
+        "technicalIndicators": {
+          "rsi": "48.76",
+          "macdSignal": "Bearish",
+          "trendStrength": 2.4848
+        },
+        "companyInfo": {
+          "name": "Palantir Technologies Inc",
+          "currentPrice": 101.25,
+          "dayChange": -2.4848,
+          "marketCap": "$236.5T",
+          "dayRange": {
+            "low": 99.32,
+            "high": 103.57
           }
         }
       }
@@ -4578,6 +5538,46 @@
             "high": 190.9199
           }
         }
+      },
+      "020525in": {
+        "symbol": "SNOW",
+        "prediction": 6.190184076923077,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -0.7826,
+          "volatility": 0.007826,
+          "momentum": -0.007826,
+          "tradingMetrics": {
+            "support": 178.24849999999998,
+            "resistance": 197.0115
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.403846153846154,
+          "breakdown": {
+            "strongBuy": 12,
+            "buy": 27,
+            "hold": 12,
+            "sell": 1,
+            "strongSell": 0
+          },
+          "total": 52
+        },
+        "technicalIndicators": {
+          "rsi": "49.61",
+          "macdSignal": "Bearish",
+          "trendStrength": 0.7826
+        },
+        "companyInfo": {
+          "name": "Snowflake Inc",
+          "currentPrice": 187.63,
+          "dayChange": -0.7826,
+          "marketCap": "$62.4T",
+          "dayRange": {
+            "low": 181.68,
+            "high": 187.67
+          }
+        }
       }
     },
     "SUMO": {
@@ -4622,6 +5622,46 @@
         }
       },
       "020425post": {
+        "symbol": "SUMO",
+        "prediction": 5.909090909090909,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0,
+          "volatility": 0,
+          "momentum": 0,
+          "tradingMetrics": {
+            "support": 0,
+            "resistance": 0
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 6.818181818181818,
+          "breakdown": {
+            "strongBuy": 2,
+            "buy": 4,
+            "hold": 5,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 11
+        },
+        "technicalIndicators": {
+          "rsi": "50.00",
+          "macdSignal": "Bearish",
+          "trendStrength": 0
+        },
+        "companyInfo": {
+          "name": "SUMO",
+          "currentPrice": 0,
+          "dayChange": null,
+          "marketCap": "N/A",
+          "dayRange": {
+            "low": 0,
+            "high": 0
+          }
+        }
+      },
+      "020525in": {
         "symbol": "SUMO",
         "prediction": 5.909090909090909,
         "recommendation": "Hold",
@@ -4742,6 +5782,46 @@
             "high": 322
           }
         }
+      },
+      "020525in": {
+        "symbol": "TEAM",
+        "prediction": 6.194556932432432,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 0.8083,
+          "volatility": 0.008083,
+          "momentum": 0.008083,
+          "tradingMetrics": {
+            "support": 303.32550000000003,
+            "resistance": 335.2545
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.364864864864865,
+          "breakdown": {
+            "strongBuy": 8,
+            "buy": 19,
+            "hold": 10,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 37
+        },
+        "technicalIndicators": {
+          "rsi": "50.40",
+          "macdSignal": "Bullish",
+          "trendStrength": 0.8083
+        },
+        "companyInfo": {
+          "name": "Atlassian Corp",
+          "currentPrice": 319.29,
+          "dayChange": 0.8083,
+          "marketCap": "$83.3T",
+          "dayRange": {
+            "low": 314.4392,
+            "high": 320.74
+          }
+        }
       }
     },
     "WDAY": {
@@ -4822,6 +5902,46 @@
           "dayRange": {
             "low": 255.42,
             "high": 260.97
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "WDAY",
+        "prediction": 6.282026444444444,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": 5.8388,
+          "volatility": 0.058388,
+          "momentum": 0.058388,
+          "tradingMetrics": {
+            "support": 261.15024999999997,
+            "resistance": 288.63975
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.388888888888889,
+          "breakdown": {
+            "strongBuy": 9,
+            "buy": 25,
+            "hold": 11,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 45
+        },
+        "technicalIndicators": {
+          "rsi": "52.92",
+          "macdSignal": "Bullish",
+          "trendStrength": 5.8388
+        },
+        "companyInfo": {
+          "name": "Workday Inc",
+          "currentPrice": 274.895,
+          "dayChange": 5.8388,
+          "marketCap": "$69.1T",
+          "dayRange": {
+            "low": 262.14,
+            "high": 275.87
           }
         }
       }
@@ -4906,6 +6026,46 @@
             "high": 232.245
           }
         }
+      },
+      "020525in": {
+        "symbol": "WIX",
+        "prediction": 6.282775296296297,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -0.9014,
+          "volatility": 0.009014,
+          "momentum": -0.009014,
+          "tradingMetrics": {
+            "support": 214.1015,
+            "resistance": 236.63850000000002
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.592592592592593,
+          "breakdown": {
+            "strongBuy": 6,
+            "buy": 16,
+            "hold": 5,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 27
+        },
+        "technicalIndicators": {
+          "rsi": "49.55",
+          "macdSignal": "Bearish",
+          "trendStrength": 0.9014
+        },
+        "companyInfo": {
+          "name": "Wix.Com Ltd",
+          "currentPrice": 225.37,
+          "dayChange": -0.9014,
+          "marketCap": "$12.7T",
+          "dayRange": {
+            "low": 222.79,
+            "high": 227.3
+          }
+        }
       }
     },
     "ZS": {
@@ -4986,6 +6146,46 @@
           "dayRange": {
             "low": 198.2,
             "high": 203.86
+          }
+        }
+      },
+      "020525in": {
+        "symbol": "ZS",
+        "prediction": 6.127290471698114,
+        "recommendation": "Hold",
+        "trends": {
+          "priceChange": -0.319,
+          "volatility": 0.00319,
+          "momentum": -0.00319,
+          "tradingMetrics": {
+            "support": 192.92600000000002,
+            "resistance": 213.234
+          }
+        },
+        "analystRecommendations": {
+          "consensusScore": 7.264150943396227,
+          "breakdown": {
+            "strongBuy": 13,
+            "buy": 22,
+            "hold": 18,
+            "sell": 0,
+            "strongSell": 0
+          },
+          "total": 53
+        },
+        "technicalIndicators": {
+          "rsi": "49.84",
+          "macdSignal": "Bearish",
+          "trendStrength": 0.319
+        },
+        "companyInfo": {
+          "name": "Zscaler Inc",
+          "currentPrice": 203.08,
+          "dayChange": -0.319,
+          "marketCap": "$31.3T",
+          "dayRange": {
+            "low": 201.16,
+            "high": 204.12
           }
         }
       }
