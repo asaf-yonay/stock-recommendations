@@ -32,7 +32,10 @@ async function render(cacheData, outputPath) {
     const stockData = cacheData.data;
     const stockKeys = Object.keys(stockData).filter(k => k !== 'lastGenerationDate');
     console.log('\n[render] Processing stocks:', stockKeys);
-    console.log('[render] Last generation date:', stockData.lastGenerationDate);
+    console.log('[render] Timestamps:', {
+        fetchTimestamp: cacheData.fetchTimestamp,
+        lastGenerationDate: stockData.lastGenerationDate
+    });
 
     const latestStockData = Object.entries(stockData)
         .filter(([key]) => key !== 'lastGenerationDate')
@@ -77,7 +80,7 @@ async function render(cacheData, outputPath) {
 
     const htmlContent = generateHtml({
         data: sortedData,
-        fetchTimestamp: stockData.lastGenerationDate
+        fetchTimestamp: cacheData.fetchTimestamp
     });
     
     await fs.writeFile(outputPath, htmlContent);
@@ -97,7 +100,8 @@ function generateHtml({ data, fetchTimestamp }) {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false
+        hour12: false,
+        timeZone: 'Asia/Jerusalem'
     });
 
     return `

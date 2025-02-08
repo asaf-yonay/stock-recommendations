@@ -44,9 +44,17 @@ async function refreshData(useMock = false) {
         
         const dateKey = `${compactDate}${tradePhase}`;
         
-        // Update cache structure
+        // Create new cache structure
         const newCache = {
-            fetchTimestamp: new Date().toISOString(),
+            fetchTimestamp: etDate.toLocaleString('en-US', {
+                timeZone: 'America/New_York',
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            }),
             data: {
                 lastGenerationDate: etDate.toLocaleString('en-US', {
                     timeZone: 'America/New_York',
@@ -68,12 +76,9 @@ async function refreshData(useMock = false) {
                 const analysis = await agent.analyzeTicker(symbol);
                 
                 if (analysis) {
-                    // Initialize stock entry if it doesn't exist
                     if (!newCache.data[symbol]) {
                         newCache.data[symbol] = {};
                     }
-                    
-                    // Add the new analysis under the current date/phase key
                     newCache.data[symbol][dateKey] = analysis;
                 }
             } catch (error) {
@@ -81,11 +86,15 @@ async function refreshData(useMock = false) {
             }
         }
 
-        // Save the updated cache
+        // Save the updated cache with final timestamp
         await saveToCache(newCache, false);
         
+        console.log('Data refresh complete! Cache updated with timestamps:', {
+            fetchTimestamp: newCache.fetchTimestamp,
+            lastGenerationDate: newCache.data.lastGenerationDate
+        });
+        
         console.timeEnd('Refresh Duration');
-        console.log('Data refresh complete! Cache files updated.');
     } catch (error) {
         console.error('Refresh process error:', error);
         process.exit(1);
